@@ -48,7 +48,7 @@ export class PayementPage {
             let condidat = this.ListCondidat[Number(i.condidat)];
 
             let object = {
-              image: condidat.photo,
+            //  image: condidat.photo,
               name: condidat.nom + " " + condidat.prenom,
               date: i.date,
               montant: i.montant

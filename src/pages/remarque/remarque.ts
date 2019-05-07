@@ -1,16 +1,8 @@
 import { Component } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { NavController, NavParams, AlertController } from "ionic-angular";
 import { GeneralProvider } from "../../providers/general/general";
 import * as firebase from "firebase";
 import * as moment from "moment";
-
-/**
- * Generated class for the RemarquePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: "page-remarque",
   templateUrl: "remarque.html"
@@ -20,6 +12,7 @@ export class RemarquePage {
   remarque: any;
   remarques: any;
   constructor(
+    private alertCtrl: AlertController,
     public navCtrl: NavController,
     public navParams: NavParams,
     public general: GeneralProvider
@@ -29,12 +22,22 @@ export class RemarquePage {
   }
 
   validate() {
+    if (this.remarque==undefined||this.remarque=="")
+    { let alert=this.alertCtrl.create({
+      title: ' Enter your notes!',
+      buttons: [{
+          text: 'OK',
+          role: 'confirm' },
+          
+      ]
+  });
+  alert.present();}
+  else {
     let object = {
       start: moment(this.item.start).format("DD-MM-YYYY-HH:mm"),
       end: moment(this.item.end).format("DD-MM-YYYY-HH:mm"),
       moniteur: this.item.moniteur,
       condidat: this.item.condidat,
-
       remarque: this.remarque
     };
     console.log(object);
@@ -55,5 +58,5 @@ export class RemarquePage {
         .set(this.remarques);
     });
     this.navCtrl.pop();
-  }
+  }}
 }

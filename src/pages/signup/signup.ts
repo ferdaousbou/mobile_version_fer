@@ -5,6 +5,7 @@ import * as firebase from "firebase";
 import { CondidatProvider } from "../../providers/condidat/condidat";
 import { MoniteurProvider } from "../../providers/moniteur/moniteur";
 import { AlertController } from "ionic-angular";
+import { Tabs1Page } from "../tabs1/tabs1";
 @Component({
   selector: "page-signup",
   templateUrl: "signup.html"
@@ -145,7 +146,7 @@ export class SignupPage {
 
         console.log("moniteur");
         this.CondidatProvider.setCondidatCourant(index);
-        this.navCtrl.push(TabsPage);
+        this.navCtrl.push(Tabs1Page);
       });
     } else {
       this.MoniteurProvider.getListMoniteur().then((moniteurs: any) => {

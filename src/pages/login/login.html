@@ -5,23 +5,25 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>login</ion-title>
+  <ion-navbar color="light">
+    <ion-title>Login</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
+<ion-content padding color="light" >
+  <body >
     <ion-item>
         <ion-label floating>Enter your cin here</ion-label>
-        <ion-input  [(ngModel)]="cin" type="text" value=""></ion-input>
+        <ion-input  [(ngModel)]="cin"  type="number" value=""></ion-input>
 
       </ion-item>
       <ion-item>
         <ion-label floating>Enter your password here</ion-label>
         <ion-input [(ngModel)]="password" type="password" value=""></ion-input>
       </ion-item>
-      <button  ion-button (click)="check_pass(); "  block color="primary" >valid&nbsp;&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon></button>
-
+      <br>
+      <button id="b1" block ion-button (click)=" checkcin_pass();" >valid&nbsp;&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon></button>
+      <br>Password forgotten?
+</body>
 </ion-content>

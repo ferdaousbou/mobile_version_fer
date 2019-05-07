@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { CondidatProvider } from '../../providers/condidat/condidat';
 import { MoniteurProvider } from '../../providers/moniteur/moniteur';
 import { SignupPage } from '../signup/signup';
@@ -12,17 +12,25 @@ export class CinCheckPage {
    moniteurs :any  ;
    cin : any ;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public CondidatProvider : CondidatProvider , public MoniteurProvider:MoniteurProvider ) {
+  constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams,public CondidatProvider : CondidatProvider , public MoniteurProvider:MoniteurProvider ) {
   
   }
 
  
-  checkCin() {
-    console.log(this.cin);
-    
-if(this.cin==undefined){
-  alert("cin vide") ;
-}else {
+  checkCin():any {
+console.log(this.cin);    
+if(this.cin==undefined)
+{ let alert=this.alertCtrl.create({
+    title: ' Missing infos!',
+    buttons: [{
+        text: 'OK',
+        role: 'confirm' },
+        
+    ]
+});
+alert.present();
+}
+else {
   
   this.CondidatProvider.getListCondidat().then(
     (condidats: any) => {

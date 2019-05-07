@@ -1,30 +1,27 @@
-page-welcome {
+page-welcome { background-image: url("src/assets/img/loginn.png");
     #welcome{
        
-        
-        ion-grid.grid {
-            bottom: 11%;
-            position: absolute;
-            left: 0%;
-          
-        }
+        background-color:white;
+      
         .logo{
-            height: 20%;
-            left: 33%;
-            top: 19%;
-            position: absolute;
+           // height: 20%;
+            left: 20%;
+            top: 0%;
+           // position: ;
+            //background-size: 400px 100px;
         }
-        #b1
+        #b1 
         {
+            padding: 14px 130px;
             background-color: #D5C82A;
             color: #4A4737;
-
+            font-family: Verdana;
+           position: absolute;
+            margin-bottom: 0%;
+            margin-left: 0%;
+           // background-position: bottom;
         }
-        #b2
-        {
-            background-color: #D5C82A;
-            color: #4A4737;
-        }
+        
        
     }
 }

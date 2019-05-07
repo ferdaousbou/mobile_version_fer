@@ -36,5 +36,5 @@ export class CondidatProvider {
   getCondidatCourant() {
     return this.CondidatC ;
   }
-
+ 
 }

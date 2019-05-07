@@ -30,10 +30,10 @@ export class Home1Page {
     this.calendarOptions = {
       header: {
         left: "title",
-        right: "month,agendaWeek,agendaDay,agendaFourDay,"
+        //right: "month"
       },
       footer: {
-        right: "today prev,next"
+        right: "prev,next"
       },
       views: {
         agendaFourDay: {

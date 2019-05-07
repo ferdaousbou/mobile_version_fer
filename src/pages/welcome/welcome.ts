@@ -17,10 +17,10 @@ export class WelcomePage {
   this.navCtrl.push(LoginPage);
   }
 
-  signup(){
+ /* signup(){
   this.navCtrl.push(CinCheckPage);
   }
   geotrack(){
     this.navCtrl.push(GeotrackPage);
-  }
+  }*/
 }

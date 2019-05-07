@@ -1,10 +1,13 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, AlertController } from "ionic-angular";
 import * as $ from "jquery";
 import { AjouterHeurePage } from "../ajouter-heure/ajouter-heure";
 import { GeneralProvider } from "../../providers/general/general";
 import { MoniteurProvider } from "../../providers/moniteur/moniteur";
 import { RemarquePage } from "../remarque/remarque";
+import { CinCheckPage } from "../cin-check/cin-check";
+import { GeotrackPage } from "../geotrack/geotrack";
+import { WelcomePage } from "../welcome/welcome";
 
 @IonicPage()
 @Component({
@@ -17,6 +20,7 @@ export class HomePage {
   moniteurC;
 
   constructor(
+    private alertCtrl: AlertController,
     public navCtrl: NavController,
     public MoniteurProvider: MoniteurProvider,
     public navParams: NavParams,
@@ -24,15 +28,37 @@ export class HomePage {
   ) {
     this.moniteurC = this.MoniteurProvider.getMoniteurCourant();
   }
-
+ profile(){
+  this.navCtrl.push(CinCheckPage);
+ }
+ geotrack(){
+  this.navCtrl.push(GeotrackPage);
+ }
+ logout(){
+  let alert=this.alertCtrl.create({
+    title: ' are you sure you want to logout?',
+   // subTitle: 'this button turns on or off all the lights in your home ',
+    buttons: [{
+        text: 'cancel',
+        role: 'cancel' },
+        { 
+            text: 'continue',
+           handler: ()=> {
+      this.navCtrl.push(WelcomePage);
+           }
+        }
+    ]
+});
+alert.present();
+ }
   ngAfterViewInit() {
     this.calendarOptions = {
       header: {
         left: "title",
-        right: "month,agendaWeek,agendaDay,agendaFourDay,"
+       // right: "month,agendaWeek,agendaDay,agendaFourDay,"
       },
       footer: {
-        right: "today prev,next"
+       // right: "today prev,next"
       },
       views: {
         agendaFourDay: {
