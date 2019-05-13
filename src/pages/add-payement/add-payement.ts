@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { NavController, NavParams, AlertController } from "ionic-angular";
 import * as firebase from "firebase";
 import { CondidatProvider } from "../../providers/condidat/condidat";
 import { MoniteurProvider } from "../../providers/moniteur/moniteur";
@@ -26,12 +26,13 @@ export class AddPayementPage {
   tab: any;
 
   constructor(
+    private alertCtrl: AlertController,
     public navCtrl: NavController,
     public condidat: CondidatProvider,
     public navParams: NavParams,
     public MoniteurProvider: MoniteurProvider,
     public general: GeneralProvider
-  ) {
+  ){
     this.moniteurC = this.MoniteurProvider.getMoniteurCourant();
 
     this.condidat.getListCondidat().then(data => {
@@ -55,6 +56,18 @@ export class AddPayementPage {
   }
 
   validate() {
+    
+      if (this.condidat==undefined||this.date==undefined || this.montant==undefined)
+      {  let alert=this.alertCtrl.create({
+        title: ' Missing infos!',
+        buttons: [{
+            text: 'OK',
+            role: 'confirm' },
+            
+        ]
+    });
+    alert.present();}
+    else{
     let object = {
       condidat: this.gender,
       moniteur: this.MoniteurProvider.getMoniteurCourant(),
@@ -77,4 +90,5 @@ export class AddPayementPage {
       this.navCtrl.pop();
     });
   }
+}
 }

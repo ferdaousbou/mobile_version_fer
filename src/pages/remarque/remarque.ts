@@ -3,6 +3,9 @@ import { NavController, NavParams, AlertController } from "ionic-angular";
 import { GeneralProvider } from "../../providers/general/general";
 import * as firebase from "firebase";
 import * as moment from "moment";
+import { TabsPage } from "../tabs/tabs";
+import { CondidatProvider } from "../../providers/condidat/condidat";
+import { MoniteurProvider } from "../../providers/moniteur/moniteur";
 @Component({
   selector: "page-remarque",
   templateUrl: "remarque.html"
@@ -11,11 +14,22 @@ export class RemarquePage {
   item: any;
   remarque: any;
   remarques: any;
+  hours: any;
+  date: any;
+  gender: any;
+  moniteurs: Array<any> = [];
+  start: any;
+  end: any;
+  hour:any;
+  
+  moniteurC;
   constructor(
     private alertCtrl: AlertController,
     public navCtrl: NavController,
     public navParams: NavParams,
-    public general: GeneralProvider
+    public general: GeneralProvider,
+    public condidat: CondidatProvider,
+    public MoniteurProvider: MoniteurProvider
   ) {
     this.item = this.navParams.get("event");
     console.log(this.item);
@@ -59,4 +73,21 @@ export class RemarquePage {
     });
     this.navCtrl.pop();
   }}
+  Suppheure(){
+  let  hour = this.hours;
+    this.general.getListHours().then(data => {
+      this.hours = data;
+      if (this.hours === null) {
+        this.hours = [];
+      } else {
+        this.hours = data;
+      }
+      this.hours.remove(hour);
+      firebase
+        .database()
+        .ref("/heurs")
+        .set(this.hours);
+      this.navCtrl.setRoot(TabsPage);
+    });
+  }
 }

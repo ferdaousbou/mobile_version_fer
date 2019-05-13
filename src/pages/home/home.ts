@@ -28,12 +28,7 @@ export class HomePage {
   ) {
     this.moniteurC = this.MoniteurProvider.getMoniteurCourant();
   }
- profile(){
-  this.navCtrl.push(CinCheckPage);
- }
- geotrack(){
-  this.navCtrl.push(GeotrackPage);
- }
+
  logout(){
   let alert=this.alertCtrl.create({
     title: ' are you sure you want to logout?',

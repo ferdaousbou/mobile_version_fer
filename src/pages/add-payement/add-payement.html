@@ -2,7 +2,7 @@
  
 -->
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="light">
     <ion-title>addPayement</ion-title>
   </ion-navbar>
 </ion-header>
@@ -26,5 +26,5 @@
     <ion-label>Montant</ion-label>
     <ion-input [(ngModel)]="montant" type="number"></ion-input>
   </ion-item>
-  <button ion-button block (click)="validate()">Validate</button>
+  <button ion-button block id="b1" (click)="validate()">Confirm&nbsp;&nbsp;&nbsp;<ion-icon name="arrow-round-forward"></ion-icon></button>
 </ion-content>

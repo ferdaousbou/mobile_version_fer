@@ -14,6 +14,7 @@ import { CinCheckPage } from "../cin-check/cin-check";
 })
 export class TabsPage {
   tab1Root = "HomePage";
+// tab1Root= GeotrackPage;
   tab2Root = CinCheckPage;
   tab3Root = PayementPage;
   tab4Root = GeotrackPage;

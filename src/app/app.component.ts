@@ -11,7 +11,7 @@ import { LoginPage } from "../pages/login/login";
   templateUrl: "app.html"
 })
 export class MyApp {
-  rootPage: any = WelcomePage;
+  rootPage:any=  WelcomePage;
 
   constructor(
     platform: Platform,
@@ -19,13 +19,14 @@ export class MyApp {
     splashScreen: SplashScreen
   ) {
     platform.ready().then(() => {
-      var config = {
-        apiKey: "AIzaSyCTNHT7OBbPkGHfk5UF0J13cjPsoC-3ZVY",
-        authDomain: "auto-ecole-632d4.firebaseapp.com",
-        databaseURL: "https://auto-ecole-632d4.firebaseio.com",
-        projectId: "auto-ecole-632d4",
-        storageBucket: "auto-ecole-632d4.appspot.com",
-        messagingSenderId: "1033708489207"
+      const config = {
+        apiKey: "AIzaSyDFPHayZZMwecMMv9FKrbiDD5gwSRT4MME",
+        authDomain: "auto-ecole-632d4-restore.firebaseapp.com",
+        databaseURL: "https://auto-ecole-632d4-restore.firebaseio.com",
+        projectId: "auto-ecole-632d4-restore",
+        storageBucket: "auto-ecole-632d4-restore.appspot.com",
+        messagingSenderId: "344148904685",
+        appId: "1:344148904685:web:091d548470f72dfe"
       };
       if (!firebase.apps.length) {
         firebase.initializeApp(config);

@@ -22,8 +22,11 @@
         <ion-label floating>Enter your password here</ion-label>
         <ion-input [(ngModel)]="password" type="password" value=""></ion-input>
       </ion-item>
+    <!--  <ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+				<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+			</ion-item>-->
       <br>
       <button id="b1" block ion-button (click)=" checkcin_pass();" >valid&nbsp;&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon></button>
-      <br>Password forgotten?
+    
 </body>
 </ion-content>

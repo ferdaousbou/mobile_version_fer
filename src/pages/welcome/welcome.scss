@@ -5,9 +5,10 @@ page-welcome { background-image: url("src/assets/img/loginn.png");
       
         .logo{
            // height: 20%;
-            left: 20%;
-            top: 0%;
-           // position: ;
+            //left: 20%;
+           // top: 0%;
+           
+           position: relative;
             //background-size: 400px 100px;
         }
         #b1 
@@ -16,10 +17,11 @@ page-welcome { background-image: url("src/assets/img/loginn.png");
             background-color: #D5C82A;
             color: #4A4737;
             font-family: Verdana;
-           position: absolute;
-            margin-bottom: 0%;
-            margin-left: 0%;
+          // position: absolute;
+          //  margin-bottom: 0%;
+           // margin-left: 0%;
            // background-position: bottom;
+           bottom: -5%;
         }
         
        

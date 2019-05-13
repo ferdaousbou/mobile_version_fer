@@ -5,17 +5,6 @@ import { GeneralProvider } from "../../providers/general/general";
 import * as firebase from "firebase";
 import { TabsPage } from "../tabs/tabs";
 import { MoniteurProvider } from "../../providers/moniteur/moniteur";
-import { AlertController } from "ionic-angular";
-//import {Tabs1Page} from "../tabs1/tabs1";
-
-
-/**
- * Generated class for the AjouterHeurePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: "page-ajouter-heure",
   templateUrl: "ajouter-heure.html"
@@ -30,7 +19,6 @@ export class AjouterHeurePage {
   moniteurC;
 
   constructor(
-    private alertCtrl: AlertController,
     public navCtrl: NavController,
     public navParams: NavParams,
     public general: GeneralProvider,
@@ -59,17 +47,6 @@ export class AjouterHeurePage {
   }
   // 2016-09-09T16:00:00
   validate() {
-    if (this.condidat==undefined||this.start==undefined || this.end==undefined)
-    {  let alert=this.alertCtrl.create({
-      title: ' Missing infos!',
-      buttons: [{
-          text: 'OK',
-          role: 'confirm' },
-          
-      ]
-  });
-  alert.present();}
-    else{
     let object = {
       moniteur: this.moniteurC,
       condidat: this.gender,
@@ -79,7 +56,7 @@ export class AjouterHeurePage {
         this.moniteurs[this.gender].prenom,
       start: this.date + "T" + this.start,
       end: this.date + "T" + this.end,
-      color: "black"
+      color: "red"
     };
     console.log(object);
     console.log(this.start);
@@ -97,5 +74,6 @@ export class AjouterHeurePage {
         .set(this.hours);
       this.navCtrl.setRoot(TabsPage);
     });
-  }}
+  }
+ 
 }

@@ -59,7 +59,7 @@ export class AboutPage {
               comment: i.commentaire,
               moniteur: i.moniteur,
               condidat: i.condidat,
-              //response: i.response
+              response: i.response
             };
 
             this.items.push(object);
