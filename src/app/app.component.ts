@@ -6,12 +6,13 @@ import * as firebase from "firebase";
 import { WelcomePage } from "../pages/welcome/welcome";
 import { PayementPage } from "../pages/payement/payement";
 import { LoginPage } from "../pages/login/login";
+import { MenuPage } from "../pages/menu/menu";
 
 @Component({
   templateUrl: "app.html"
 })
 export class MyApp {
-  rootPage:any=  WelcomePage;
+  rootPage:any= WelcomePage;
 
   constructor(
     platform: Platform,

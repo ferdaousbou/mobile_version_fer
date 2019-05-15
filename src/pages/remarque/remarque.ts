@@ -73,8 +73,14 @@ export class RemarquePage {
     });
     this.navCtrl.pop();
   }}
-  Suppheure(){
-  let  hour = this.hours;
+ /* Suppheure(){
+    let object = {
+      start: moment(this.item.start).format("DD-MM-YYYY-HH:mm"),
+      end: moment(this.item.end).format("DD-MM-YYYY-HH:mm"),
+      moniteur: this.item.moniteur,
+      condidat: this.item.condidat,
+     hours: this.hours
+    };
     this.general.getListHours().then(data => {
       this.hours = data;
       if (this.hours === null) {
@@ -82,12 +88,12 @@ export class RemarquePage {
       } else {
         this.hours = data;
       }
-      this.hours.remove(hour);
+      this.hours.remove(object);
       firebase
         .database()
         .ref("/heurs")
         .set(this.hours);
       this.navCtrl.setRoot(TabsPage);
     });
-  }
+  }*/
 }

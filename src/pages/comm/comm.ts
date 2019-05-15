@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { NavController, NavParams, AlertController } from "ionic-angular";
 import { GeneralProvider } from "../../providers/general/general";
 import * as firebase from "firebase";
 /**
@@ -18,6 +18,7 @@ export class CommPage {
   comment;
   commentaires: any;
   constructor(
+    private alertCtrl : AlertController,
     public navCtrl: NavController,
     public general: GeneralProvider,
     public navParams: NavParams
@@ -37,7 +38,17 @@ export class CommPage {
       condidat: this.event.condidat,
       commentaire: this.comment
     };
-
+    if(this.commentaires==undefined)
+    { let alert=this.alertCtrl.create({
+        title: ' Missing infos!',
+        buttons: [{
+            text: 'OK',
+            role: 'confirm' },
+            
+        ]
+    });
+    alert.present();}
+    else {
     console.log(object);
     this.general.getListCommantaires().then(data => {
       this.commentaires = data;
@@ -57,4 +68,4 @@ export class CommPage {
       this.navCtrl.pop();
     });
   }
-}
+}}

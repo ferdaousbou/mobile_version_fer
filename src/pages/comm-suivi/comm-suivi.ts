@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { NavController, NavParams, AlertController } from "ionic-angular";
 import { GeneralProvider } from "../../providers/general/general";
 import { MoniteurProvider } from "../../providers/moniteur/moniteur";
 import { AngularFireDatabase } from "@angular/fire/database";
@@ -26,8 +26,10 @@ export class CommSuiviPage {
   items: Array<any> = [];
   ListCondidat: any[];
   commentaires: Array<any>;
+  
 
   constructor(
+    private alertCtrl:AlertController,
     public condidat: CondidatProvider,
     public navCtrl: NavController,
     public MoniteurProvider: MoniteurProvider,
@@ -39,6 +41,7 @@ export class CommSuiviPage {
     this.moniteurC = this.MoniteurProvider.getMoniteurCourant();
     this.init();
   }
+  
 
   init() {
     this.afDB
@@ -84,7 +87,17 @@ export class CommSuiviPage {
 
   validate(item) {
     console.log(this.text.value);
-
+    if(this.commentaires==undefined)
+    { let alert=this.alertCtrl.create({
+        title: ' Missing infos!',
+        buttons: [{
+            text: 'OK',
+            role: 'confirm' },
+            
+        ]
+    });
+    alert.present();}
+    
     let object = {
       start: item.start,
       end: item.end,

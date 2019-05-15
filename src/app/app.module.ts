@@ -40,6 +40,7 @@ import { CommSuiviPage } from "../pages/comm-suivi/comm-suivi";
 //import { LoginsPage } from "../pages/logins/logins";
 import { Geolocation } from '@ionic-native/geolocation';
 import { GeotrackPage } from "../pages/geotrack/geotrack";
+import { MenuPage } from "../pages/menu/menu";
 //import { Device } from '@ionic-native/device';
 //declare let Device:any;
 @NgModule({
@@ -59,7 +60,8 @@ import { GeotrackPage } from "../pages/geotrack/geotrack";
     AddPayementPage,
     CommPage,
     CommSuiviPage,
-    GeotrackPage
+    GeotrackPage,
+    MenuPage
   
   ],
   imports: [
@@ -86,7 +88,8 @@ import { GeotrackPage } from "../pages/geotrack/geotrack";
     Tabs1Page,
     CommPage,
     CommSuiviPage,
-    GeotrackPage
+    GeotrackPage,
+    MenuPage
   
   ],
   providers: [

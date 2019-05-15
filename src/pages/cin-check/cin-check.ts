@@ -59,9 +59,6 @@ else {
       this.navCtrl.push(SignupPage ,{object :object});
 
      //console.log( this.moniteurs[index]);
-    }else {
-    alert("Check your CIN !") ;
-      
     }
       }
     );
