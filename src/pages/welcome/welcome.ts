@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { CinCheckPage } from '../../pages/cin-check/cin-check';
 import { GeotrackPage } from '../geotrack/geotrack';
+import { PasswordcinPage } from '../passwordcin/passwordcin';
 
 @Component({
   selector: 'page-welcome',
@@ -12,7 +13,9 @@ import { GeotrackPage } from '../geotrack/geotrack';
 export class WelcomePage {
   constructor(public navCtrl: NavController) {
   }
-
+create_password(){
+  this.navCtrl.push(PasswordcinPage);
+}
   login(){
   this.navCtrl.push(LoginPage);
   }
