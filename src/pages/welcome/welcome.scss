@@ -11,19 +11,12 @@ page-welcome { background-image: url("src/assets/img/loginn.png");
            position: relative;
             //background-size: 400px 100px;
         }
-        #b1 
-        {
-            padding: 14px 130px;
-            background-color: #D5C82A;
-            color: #4A4737;
-            font-family: Verdana;
-          // position: absolute;
-          //  margin-bottom: 0%;
-           // margin-left: 0%;
-           // background-position: bottom;
-           bottom: -5%;
-        }
+        .color{
+            padding: 30px 130px;
+            background: linear-gradient(to right, black , #4A4737, #D5C82A)
+          }
         
        
-    }
+    } 
+
 }

@@ -12,6 +12,9 @@ import { PasswordcinPage } from '../passwordcin/passwordcin';
 })
 export class WelcomePage {
   constructor(public navCtrl: NavController) {
+    this.tabBarElement = <HTMLElement>(
+      document.querySelector('.tabbar.show-tabbar')
+    );
   }
 create_password(){
   this.navCtrl.push(PasswordcinPage);
@@ -19,11 +22,13 @@ create_password(){
   login(){
   this.navCtrl.push(LoginPage);
   }
+  tabBarElement: HTMLElement;
 
- /* signup(){
-  this.navCtrl.push(CinCheckPage);
+
+  ionViewWillEnter() {
+    if (this.tabBarElement !== null) {
+      this.tabBarElement.style.opacity = '0';
+      this.tabBarElement.style.pointerEvents = 'none';
+    }
   }
-  geotrack(){
-    this.navCtrl.push(GeotrackPage);
-  }*/
 }

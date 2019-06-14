@@ -1,12 +1,8 @@
 page-login {
-   #b1{
-    background-color: #D5C82A;
-    color: #4A4737;
-    font-family: Verdana;
-    position:center;
-    border-color: #4A4737;
-    
-   }
+    .color{
+        padding: 30px 130px;
+        background: linear-gradient(to right, black , #4A4737, #D5C82A)
+      }
     body{
     background-image: url("src/assets/img/bglogin.png");
   

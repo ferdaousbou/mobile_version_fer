@@ -18,6 +18,6 @@ export class TabsPage {
   tab2Root = CinCheckPage;
   tab3Root = PayementPage;
   tab4Root = GeotrackPage;
-   tab5Root=CommSuiviPage;
+  tab5Root = CommSuiviPage;
   constructor() {}
 }

@@ -58,7 +58,21 @@ else {
       this.navCtrl.push(PasswordPage ,{object :object});
 
      //console.log( this.moniteurs[index]);
-    } }); }});  }}
+    } else {
+      let alert=this.alertCtrl.create({
+        title: ' wrong infos!',
+        buttons: [{
+            text: 'OK',
+            role: 'confirm' },
+            
+        ]
+    });
+    alert.present();
+    
+    } });
+   }
+    
+  });  }}
   ionViewDidLoad() {
     console.log(this.condidats);
   }}
